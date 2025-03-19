@@ -16,7 +16,7 @@ datasource db {
 model User {
   id String @id @default(cuid())
   email String @unique
-  userName String @unique
+  username String @unique
   clerkId String @unique
   name String?
   bio String?
