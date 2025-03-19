@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/prisma";
+import prisma from "@/lib/prisma";
 import { auth, currentUser } from "@clerk/nextjs/server"
 
 export const syncUser = async ()=> {
