@@ -31,3 +31,20 @@ export const syncUser = async ()=> {
         
     }
 }
+
+export const getUserByClerkId = async (clerkId: string) => {
+    return prisma.user.findUnique({
+        where: {
+            clerkId
+        },
+        include: {
+            _count: {
+                select: {
+                    followers: true,
+                    following: true,
+                    posts: true
+                }
+            }
+        }
+    })
+}
